@@ -5,6 +5,10 @@
  */
 package classes;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 
 /**
@@ -18,12 +22,13 @@ public class Interface extends javax.swing.JFrame {
     private Integer anguloA;
     private Integer anguloB;
     private Integer anguloC;
+    private Rectangle braco1;
+    private Rectangle braco2;
 
     /**
      * Creates new form Interface
      */
     public Interface() {
-        this.anguloA = 0;
         this.anguloB = 0;
         this.anguloC = 0;
         initComponents();
@@ -40,12 +45,14 @@ public class Interface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         lblValorJuntaA = new javax.swing.JLabel();
-        lblValorJuntaB = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblValorGarra = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblValorJuntaB = new javax.swing.JLabel();
+        pnlDesenho = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -54,20 +61,73 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Junta A");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setText("Junta B");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Junta A");
 
         lblValorJuntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblValorJuntaA.setText("0");
 
-        lblValorJuntaB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblValorJuntaB.setText("0");
-
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Garra");
 
         lblValorGarra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblValorGarra.setText("0");
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Junta B");
+
+        lblValorJuntaB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblValorJuntaB.setText("0");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblValorJuntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(lblValorGarra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblValorJuntaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblValorJuntaA)
+                    .addComponent(lblValorGarra)
+                    .addComponent(lblValorJuntaB))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlDesenho.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout pnlDesenhoLayout = new javax.swing.GroupLayout(pnlDesenho);
+        pnlDesenho.setLayout(pnlDesenhoLayout);
+        pnlDesenhoLayout.setHorizontalGroup(
+            pnlDesenhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        pnlDesenhoLayout.setVerticalGroup(
+            pnlDesenhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 249, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,37 +135,19 @@ public class Interface extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblValorJuntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(78, 78, 78)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblValorGarra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblValorJuntaB, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlDesenho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblValorGarra))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblValorJuntaA)
-                            .addComponent(lblValorJuntaB))))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addComponent(pnlDesenho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -113,12 +155,15 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+        Double x1 = calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB));
+        Double y1 = calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB));
+        Double angulo2 = (calcula.calcularAnguloX(calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB)), calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB))));
+        Double angulo1 = (calcula.calcularAnguloY(calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB)), calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB))));
         System.out.println("Ponto x :" + calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB)));
         System.out.println("Ponto y :" + calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB)));
-        //System.out.println("anguloA :" + calcula.calcularAnguloX(calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB)), calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB))));
-        //System.out.println("anguloA :" + calcula.calcularAnguloY(calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB)), calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB))));
-        System.out.println(calcula.calcularAnguloX(23, 0));
-        System.out.println(calcula.calcularAnguloY(23, 0));
+        
+        System.out.println("Angulo A : " + calcula.calcularAnguloX(calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB)), calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB))));
+        System.out.println("Angulo B : " + calcula.calcularAnguloY(calcula.calcularX(Math.toRadians(anguloA), Math.toRadians(anguloB)), calcula.calcularY(Math.toRadians(anguloA), Math.toRadians(anguloB))));
         if (evt.getKeyCode() == 37) {
             if (anguloA >= 10) {
                 anguloA -= 10;
@@ -156,18 +201,33 @@ public class Interface extends javax.swing.JFrame {
             }
         }
         
-       // conn.comunicacaoArduino(anguloA,'x');
-       // conn.comunicacaoArduino(anguloB,'y');
-       // conn.comunicacaoArduino(anguloC,'z');
+        desenha( x1 , y1 , angulo1, angulo2);
+        
+       //conn.comunicacaoArduino(anguloA,'x');
+       //conn.comunicacaoArduino(anguloB,'y');
+       //conn.comunicacaoArduino(anguloC,'z');
     }//GEN-LAST:event_formKeyReleased
 
+    
+    public void desenha(double x1 ,  double y1 , double angulo1 , double angulo2) {
+       
+        System.out.println("Cos " + (int) (Math.cos(Math.toRadians(angulo2)) * 13));
+        System.out.println("Sin " + (int) (Math.sin(Math.toRadians(angulo2)) * 13));
+        
+        Graphics grafico = pnlDesenho.getGraphics();
+        grafico.setColor(Color.BLUE);
+        grafico.drawLine(100 , 100, 200 +  ((int) ( Math.cos(Math.toRadians(angulo1)) * 13)) , 100 - ((int) Math.sin(Math.toRadians(angulo1)) * 13));
+        grafico.drawLine(100 + (int) Math.cos(Math.toRadians(angulo1)) * 13 , 100 - (int) Math.sin(Math.toRadians(angulo1)) * 13 , ((int) x1 + 100) , ((int) -y1 + 100));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblValorGarra;
     private javax.swing.JLabel lblValorJuntaA;
     private javax.swing.JLabel lblValorJuntaB;
+    private javax.swing.JPanel pnlDesenho;
     // End of variables declaration//GEN-END:variables
 }
